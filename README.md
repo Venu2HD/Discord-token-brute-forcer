@@ -9,6 +9,7 @@ Makes your discord account look like it is always typing in a certain channel
   git clone https://github.com/Venu2HD/Always-typing-discord-prank.git
   cd Always-typing-discord-prank
   python3 main.py
+  ```
   ### 🍎MacOS🍎
   Install python from here:
   [Python macOS downloads](https://www.python.org/downloads/macos/)
