@@ -6,8 +6,8 @@ Makes your discord account look like it is always typing in a certain channel
   ```
   sudo apt-get install python3-pip
   sudo apt-get install python3
-  git clone https://github.com/Venu2HD/Always-typing-discord-prank.git
-  cd Always-typing-discord-prank
+  git clone https://github.com/Venu2HD/Discord-token-brute-forcer.git
+  cd Discord-token-brute-forcer
   python3 main.py
   ```
   ### 🍎MacOS🍎
@@ -16,8 +16,8 @@ Makes your discord account look like it is always typing in a certain channel
   
   Open a terminal
   ```
-  git clone https://github.com/Venu2HD/Always-typing-discord-prank.git
-  cd Always-typing-discord-prank
+  git clone https://github.com/Venu2HD/Discord-token-brute-forcer.git
+  cd Discord-token-brute-forcer
   python3 main.py
   ```
   ### 🪟Windows🪟
