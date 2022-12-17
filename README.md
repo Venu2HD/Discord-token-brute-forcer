@@ -1,5 +1,5 @@
-# Always-typing-discord-prank
-Makes your discord account look like it is always typing in a certain channel
+# Discord token brute forcer
+Tries random tokens on the target account, essentially brute forcing your way into their account.
 ## Install
   ### 🐧Linux/Unix🐧
   Open a terminal
