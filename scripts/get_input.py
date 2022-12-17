@@ -1,7 +1,7 @@
 from base64 import b64encode
 
 
-def get_target_BASE64(clear_screen_function) -> list[str, int]:
+def get_target(clear_screen_function) -> list[str, int]:
     while True:
         clear_screen_function()
         try:

