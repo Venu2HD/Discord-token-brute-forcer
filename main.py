@@ -16,7 +16,7 @@ def main() -> None:
     try:
         check_folders()
         if name == "nt":
-            system("title DISCORD TOKEN CHECKER - Made by Venu2HD#1761")
+            system("title DISCORD TOKEN BRUTE FORCER - Made by Venu2HD#1761")
         SETTINGS: dict = get_config()
         START_BASE64, TARGET_UUID = get_target(clear_screen)
         clear_screen()
